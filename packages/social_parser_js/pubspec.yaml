@@ -1,0 +1,22 @@
+name: social_parser_js
+description: Importable JavaScript social media sources powered by embedded QuickJS.
+version: 0.2.0
+publish_to: none
+resolution: workspace
+environment:
+  sdk: '>=3.9.2 <4.0.0'
+  flutter: '>=3.35.5'
+dependencies:
+  flutter:
+    sdk: flutter
+  social_parser: ^0.2.0
+  fjs: 3.3.2
+  crypto: ^3.0.7
+dev_dependencies:
+  test: ^1.29.0
+  dio: ^5.11.1
+  flutter_test:
+    sdk: flutter
+flutter:
+  assets:
+    - assets/sources/

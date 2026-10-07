@@ -1,0 +1,532 @@
+[
+  {
+    "name": "coolapk",
+    "url": "https://www.coolapk.com/feed/123?shareKey=keep&s=keep&tracking=drop",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/feed/123",
+        "data": "<div class=\"message-title\">标题</div><div class=\"feed-article-message\"><p>正文</p><img class=\"message-image\" src=\"//cdn.example/a.jpg\"></div>"
+      }
+    ],
+    "types": [
+      "image"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "douban",
+    "url": "https://www.douban.com/group/topic/123/",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/rexxar/api/v2/group/topic/123",
+        "data": {
+          "title": "豆瓣",
+          "content": "<p>正文</p>",
+          "photos": [
+            {
+              "image": {
+                "large": {
+                  "url": "https://cdn.example/a.jpg",
+                  "width": 600,
+                  "height": 900
+                }
+              }
+            }
+          ],
+          "video_info": {
+            "video_url": "https://cdn.example/v.mp4",
+            "cover_url": "https://cdn.example/c.jpg",
+            "duration": "01:12",
+            "video_width": 1920,
+            "video_height": 1080
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {
+      "Referer": "https://www.douban.com/"
+    }
+  },
+  {
+    "name": "tieba",
+    "url": "https://tieba.baidu.com/p/123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/dc/common/tbs",
+        "data": {
+          "tbs": "fixture-token"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/c/f/pb/page_pc",
+        "data": {
+          "error_code": 0,
+          "thread": {
+            "origin_thread_info": {
+              "title": "帖子",
+              "content": [
+                {
+                  "type": 0,
+                  "text": "正文"
+                }
+              ],
+              "media": [
+                {
+                  "big_pic": "https://cdn.example/a.jpg",
+                  "width": 800,
+                  "height": 600
+                }
+              ]
+            },
+            "video_info": {
+              "video_url": "https://cdn.example/v.mp4"
+            }
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "weixin",
+    "url": "https://mp.weixin.qq.com/s?__biz=test&mid=1&idx=1&sn=keep&tracking=drop",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/s",
+        "data": "<script>window.cgiDataNew = {title:'公众号',item_show_type:'0' * 1,content_noencode:'<p>正文</p><img data-src=\"https://cdn.example/a.jpg\">',unused:undefined,}; try {} catch(e) {}</script>"
+      }
+    ],
+    "types": [
+      "image"
+    ],
+    "content": "正文",
+    "headers": {
+      "Referer": "https://mp.weixin.qq.com/"
+    }
+  },
+  {
+    "name": "weibo",
+    "url": "https://weibo.com/111/abc",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/ajax/statuses/show",
+        "data": {
+          "id": "abc",
+          "text_raw": "正文",
+          "mix_media_info": {
+            "items": [
+              {
+                "type": "pic",
+                "data": {
+                  "largest": {
+                    "url": "https://cdn.example/a.jpg"
+                  },
+                  "video": "https://cdn.example/live.mp4"
+                }
+              },
+              {
+                "type": "video",
+                "data": {
+                  "page_pic": {
+                    "url": "https://cdn.example/cover.jpg"
+                  },
+                  "media_info": {
+                    "duration": 12,
+                    "playback_list": [
+                      {
+                        "play_info": {
+                          "url": "https://cdn.example/video.mp4",
+                          "width": 1920,
+                          "height": 1080
+                        }
+                      },
+                      {
+                        "play_info": {
+                          "url": "https://cdn.example/video.m3u8",
+                          "width": 1280,
+                          "height": 720
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "types": [
+      "livePhoto",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "instagram",
+    "url": "https://www.instagram.com/p/Fixture/",
+    "responses": [
+      {
+        "method": "POST",
+        "path": "/graphql/query",
+        "data": {
+          "data": {
+            "xdt_shortcode_media": {
+              "shortcode": "Fixture",
+              "__typename": "GraphSidecar",
+              "edge_media_to_caption": {
+                "edges": [
+                  {
+                    "node": {
+                      "text": "正文"
+                    }
+                  }
+                ]
+              },
+              "edge_sidecar_to_children": {
+                "edges": [
+                  {
+                    "node": {
+                      "display_url": "https://cdn.example/a.jpg",
+                      "dimensions": {
+                        "width": 400,
+                        "height": 600
+                      }
+                    }
+                  },
+                  {
+                    "node": {
+                      "video_url": "https://cdn.example/v.mp4",
+                      "display_url": "https://cdn.example/cover.jpg"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "threads",
+    "url": "https://www.threads.net/@user/post/Fixture",
+    "responses": [
+      {
+        "method": "POST",
+        "path": "/graphql/query",
+        "data": {
+          "data": {
+            "data": {
+              "edges": [
+                {
+                  "node": {
+                    "thread_items": [
+                      {
+                        "post": {
+                          "code": "other",
+                          "caption": {
+                            "text": "wrong"
+                          }
+                        }
+                      },
+                      {
+                        "post": {
+                          "code": "Fixture",
+                          "media_type": 8,
+                          "caption": {
+                            "text": "正文"
+                          },
+                          "carousel_media": [
+                            {
+                              "media_type": 1,
+                              "image_versions2": {
+                                "candidates": [
+                                  {
+                                    "url": "https://cdn.example/a.jpg"
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "media_type": 2,
+                              "video_versions": [
+                                {
+                                  "url": "https://cdn.example/v.mp4"
+                                }
+                              ],
+                              "image_versions2": {
+                                "candidates": [
+                                  {
+                                    "url": "https://cdn.example/cover.jpg"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "twitter",
+    "url": "https://x.com/user/status/123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/graphql/kPLTRmMnzbPTv70___D06w/TweetResultByRestId",
+        "data": {
+          "data": {
+            "tweetResult": {
+              "result": {
+                "rest_id": "123",
+                "legacy": {
+                  "full_text": "short",
+                  "extended_entities": {
+                    "media": [
+                      {
+                        "type": "photo",
+                        "media_url_https": "https://cdn.example/a.jpg",
+                        "original_info": {
+                          "width": 1200,
+                          "height": 800
+                        }
+                      },
+                      {
+                        "type": "video",
+                        "media_url_https": "https://cdn.example/cover.jpg",
+                        "video_info": {
+                          "duration_millis": 1234,
+                          "variants": [
+                            {
+                              "url": "https://cdn.example/low.mp4",
+                              "bitrate": 100
+                            },
+                            {
+                              "url": "https://cdn.example/high.mp4",
+                              "bitrate": 500
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "note_tweet": {
+                  "note_tweet_results": {
+                    "result": {
+                      "text": "正文"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "zhihu",
+    "url": "https://www.zhihu.com/question/12/answer/123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/api/v4/answers/123",
+        "data": {
+          "question": {
+            "title": "问题"
+          },
+          "content": "<p>正文</p><img src=\"https://cdn.example/a.jpg\">"
+        }
+      }
+    ],
+    "types": [
+      "image"
+    ],
+    "content": "正文",
+    "headers": {
+      "Referer": "https://www.zhihu.com/"
+    }
+  },
+  {
+    "name": "xiaoheihe",
+    "url": "https://www.xiaoheihe.cn/app/bbs/link/123?link_id=123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/bbs/app/link/tree",
+        "data": {
+          "status": "ok",
+          "result": {
+            "link": {
+              "title": "小黑盒",
+              "has_video": false,
+              "text": "[{\"type\": \"html\", \"text\": \"<p>\\u6b63\\u6587</p>\"}, {\"type\": \"img\", \"url\": \"https://cdn.example/a.jpg\", \"width\": 100, \"height\": 200}, {\"type\": \"img\", \"url\": \"https://cdn.example/b.gif\"}]"
+            }
+          }
+        }
+      }
+    ],
+    "types": [
+      "image",
+      "animation"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "douyin",
+    "url": "https://www.douyin.com/?modal_id=123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "data": {
+          "aweme_detail": {
+            "aweme_id": "123",
+            "desc": "正文",
+            "images": [
+              {
+                "url_list": [
+                  "https://cdn.example/a.jpg"
+                ],
+                "video": {
+                  "play_addr": {
+                    "url_list": [
+                      "https://cdn.example/live.mp4"
+                    ]
+                  }
+                }
+              },
+              {
+                "url_list": [
+                  "https://cdn.example/b.jpg"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "types": [
+      "livePhoto",
+      "image"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "tiktok",
+    "url": "https://www.tiktok.com/@user/video/123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/aweme/v1/feed/",
+        "data": {
+          "aweme_list": [
+            {
+              "aweme_id": "other",
+              "desc": "wrong"
+            },
+            {
+              "aweme_id": "123",
+              "desc": "正文",
+              "video": {
+                "duration": 1234,
+                "cover": {
+                  "url_list": [
+                    "https://cdn.example/cover.jpg"
+                  ]
+                },
+                "bit_rate": [
+                  {
+                    "play_addr": {
+                      "url_list": [
+                        "https://cdn.example/low.mp4"
+                      ],
+                      "width": 720
+                    }
+                  },
+                  {
+                    "play_addr": {
+                      "url_list": [
+                        "https://cdn.example/high.mp4"
+                      ],
+                      "width": 1080
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "types": [
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  },
+  {
+    "name": "kuaishou",
+    "url": "https://www.kuaishou.com/short-video/123",
+    "responses": [
+      {
+        "method": "GET",
+        "path": "/short-video/123",
+        "data": "<script>window.__APOLLO_STATE__ = {\"defaultClient\": {\"VisionVideoDetailPhoto:123\": {\"id\": \"123\", \"caption\": \"\\u6b63\\u6587\", \"coverUrl\": \"https://cdn.example/cover.jpg\", \"manifest\": {\"adaptationSet\": [{\"representation\": [{\"url\": \"https://cdn.example/v.mp4\", \"width\": 1920, \"height\": 1080}]}]}}}}; var other = {};</script>"
+      }
+    ],
+    "types": [
+      "video"
+    ],
+    "content": "正文",
+    "headers": {}
+  }
+]

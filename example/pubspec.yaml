@@ -1,0 +1,20 @@
+name: social_parser_example
+description: Android and iOS social parser integration example.
+version: 0.2.0+2
+publish_to: none
+resolution: workspace
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  social_parser: ^0.2.0
+  social_parser_js: ^0.2.0
+  path_provider: ^2.1.5
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true

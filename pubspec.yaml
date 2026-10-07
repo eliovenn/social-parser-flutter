@@ -1,0 +1,13 @@
+name: social_parser_workspace
+publish_to: none
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+workspace:
+  - packages/social_parser
+  - packages/social_parser_js
+  - example
+dev_dependencies:
+  lints: ^6.1.0
+  crypto: ^3.0.7
+  social_parser: any
+
